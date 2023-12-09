@@ -8,7 +8,7 @@ const SurveyForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post('http://localhost:3000/api/surveys', data, {
+      const response = await axios.post('https://group3finalbuild.onrender.com/api/surveys', data, {
         headers: {
           'Content-Type': 'application/json',
           // Add your authentication token header if applicable

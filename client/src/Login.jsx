@@ -10,7 +10,7 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       console.log("Sending request with credentials:", email, password);
-      const response = await axios.post('http://localhost:3000/api/users/signin', { email, password });
+      const response = await axios.post('https://group3finalbuild.onrender.com/api/users/signin', { email, password });
   
       if (response.status === 200) {
         localStorage.setItem('token', response.data.token);

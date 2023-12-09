@@ -11,7 +11,7 @@ const SurveyList = () => {
     const fetchSurveys = async () => {
       try {
         // Replace 'userId' with the actual user ID or authentication token
-        const response = await axios.get(`http://localhost:3000/surveys?userId=userId`);
+        const response = await axios.get(`https://group3finalbuild.onrender.com/surveys?userId=userId`);
         setSurveys(response.data);
       } catch (error) {
         console.error('Error fetching surveys:', error.message);

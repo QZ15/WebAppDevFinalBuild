@@ -12,7 +12,7 @@ const Signup = () => {
 
     // Send a POST request to the server to store the account details
     axios
-      .post('http://localhost:3000/api/users', { name, email, password })
+      .post('https://group3finalbuild.onrender.com/api/users', { name, email, password })
       .then((result) => {
         console.log('Registration successful:', result.data);
         // Perform any additional actions after successful registration

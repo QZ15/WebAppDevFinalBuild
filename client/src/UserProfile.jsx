@@ -9,7 +9,7 @@ function UserProfile() {
   const [surveys, setSurveys] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/users')
+    axios.get('https://group3finalbuild.onrender.com/api/users')
       .then((response) => {
         console.log(response.data);
         setUsers(response.data);
@@ -18,7 +18,7 @@ function UserProfile() {
   }, []);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/surveys')
+    axios.get('https://group3finalbuild.onrender.com/api/surveys')
       .then((response) => {
         console.log(response.data);
         setSurveys(response.data);
@@ -30,7 +30,7 @@ function UserProfile() {
     console.log(_id);
 
     try {
-      let response = await axios.delete(`http://localhost:3000/api/surveys/:${_id}`);
+      let response = await axios.delete(`https://group3finalbuild.onrender.com/api/surveys/:${_id}`);
 
       if (response.status === 201) {
         // Survey successfully created, you can redirect or perform other actions
