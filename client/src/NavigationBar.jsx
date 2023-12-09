@@ -8,29 +8,26 @@ const NavigationBar = ({ isLoggedIn }) => {
   return (
     <nav>
       <ul>
-        <>
-          <li>
-            <Link to="/profile" className={location.pathname === '/profile' ? 'active' : ''}>
-              My Profile
-            </Link>
-          </li>
-          <li>
-            <Link to="/survey" className={location.pathname === '/survey' ? 'active' : ''}>
-              Survey
-            </Link>
-          </li>
-          <li>
-            {/* Add the following line for SurveyList */}
-            <Link to="/SurveyList" className={location.pathname === '/SurveyList' ? 'active' : ''}>
-              Survey List
-            </Link>
-          </li>
-          <li>
-            <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
-              Signout
-            </Link>
-          </li>
-        </>
+        <li>
+          <Link to="/homepage" className={location.pathname === '/homepage' ? 'active' : ''}>
+            Homepage
+          </Link>
+        </li>
+        <li>
+          <Link to="/profile" className={location.pathname === '/profile' ? 'active' : ''}>
+            My Profile
+          </Link>
+        </li>
+        <li>
+          <Link to="/survey" className={location.pathname === '/survey' ? 'active' : ''}>
+            Survey
+          </Link>
+        </li>
+        <li>
+          <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
+            Signout
+          </Link>
+        </li>
       </ul>
     </nav>
   );
