@@ -5,7 +5,10 @@ const userRoutes = require('./routes/userRoutes');
 const surveyRoutes = require('./routes/surveyRoutes');
 const PORT = process.env.PORT || 3000;
 const app = express(); // Make sure this line is present
+const path = require('path'); // Include the 'path' module
 const CURRENT_WORKING_DIR = process.cwd();
+const PUBLIC_DIR = path.join(CURRENT_WORKING_DIR, '../dist/app');
+console.log(PUBLIC_DIR);
 
 app.use(cors());
 app.use(express.json());
@@ -32,12 +35,18 @@ app.use((req, res, next) => {
 app.use('/', userRoutes);
 app.use('/', surveyRoutes);
 
-app.get('/', (req, res) => {
-  res.send("Welcome to Student Survey");
+// app.get('/', (req, res) => {
+//   res.send("Welcome to Student Survey");
+// });
+
+// Serve static files
+app.use(express.static(PUBLIC_DIR));
+
+// For all other routes, serve the React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(PUBLIC_DIR, 'index.html'));
 });
 
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
 });
-
-app.use(express.static(path.join(CURRENT_WORKING_DIR, "../dist/app")));
