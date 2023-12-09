@@ -39,4 +39,4 @@ app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
 });
 
-app.use(express.static("../dist/app"));
+app.use(express.static(path.join(CURRENT_WORKING_DIR, "../dist/app")));
