@@ -5,8 +5,8 @@ import NavigationBar from './NavigationBar'
         return(
             <div>
             {/*{isLoggedIn && (*/}         
-                <h2>Welcome to the Homepage!</h2>    
                 <NavigationBar />
+                <h2>Welcome to the Homepage!</h2>    
             {/*}) */}
             </div>
 
