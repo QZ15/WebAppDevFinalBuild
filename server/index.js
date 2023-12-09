@@ -5,7 +5,7 @@ const userRoutes = require('./routes/userRoutes');
 const surveyRoutes = require('./routes/surveyRoutes');
 const PORT = process.env.PORT || 3000;
 const app = express(); // Make sure this line is present
-const CURRENT_WORKING_DIR = process.cwd;
+const CURRENT_WORKING_DIR = process.cwd();
 
 app.use(cors());
 app.use(express.json());
